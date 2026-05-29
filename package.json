@@ -1,0 +1,56 @@
+{
+  "name": "@builtbyecho/blackbox",
+  "version": "0.1.0",
+  "description": "Terminal flight recorder for agent runs: record, review, export, and fork from checkpoints.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuiltByEcho/echo-blackbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BuiltByEcho/echo-blackbox/issues"
+  },
+  "homepage": "https://github.com/BuiltByEcho/echo-blackbox#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "echo-blackbox": "bin/echo-blackbox.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/cli.js",
+    "pretest": "npm run build",
+    "test": "node --test test/*.test.js",
+    "check": "npm run build && npm test",
+    "ci": "npm run check && npm run pack:dry",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "keywords": [
+    "ai-agents",
+    "agent-observability",
+    "replay",
+    "cli",
+    "builtbyecho"
+  ],
+  "author": "BuiltByEcho",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.2",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}

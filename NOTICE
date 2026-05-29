@@ -1,0 +1,7 @@
+Echo Black Box is an original BuiltByEcho terminal tool.
+
+The product direction was inspired by public agent replay/debugging patterns,
+including the MIT-licensed Agent VCR project:
+https://github.com/ixchio/agent-vcr
+
+No Agent VCR source code is vendored in this package.
