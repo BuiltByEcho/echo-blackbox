@@ -144,7 +144,7 @@ describe('echo-blackbox CLI behavior', () => {
 
     assert.equal(manifest.name, 'cli-smoke');
     assert.deepEqual(manifest.command, [process.execPath, '-e', script]);
-    assert.equal(manifest.cwd, cwd);
+    assert.equal(await fs.realpath(manifest.cwd), await fs.realpath(cwd));
     assert.equal(manifest.status, 'success');
     assert.equal(manifest.exitCode, 0);
     assert.equal(manifest.storageVersion, 1);
